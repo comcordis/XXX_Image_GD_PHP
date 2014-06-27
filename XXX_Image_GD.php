@@ -35,7 +35,7 @@ class XXX_Image_GD
 	
 	public static function generateCaptcha ($captcha = '')
 	{
-		$fontPath = XXX_Path_Local::extendPath(XXX_Path_Local::composeOtherProjectDeploymentSourcePathPrefix('PHP_XXX_Image_GD'), array('fonts'));
+		$fontPath = XXX_Path_Local::extendPath(XXX_Path_Local::composeProjectDeploymentSourcePathPrefix('PHP_XXX_Image_GD'), array('fonts'));
 		
 		$fonts = array('arial.ttf', 'verdana.ttf', 'times.ttf');
 		
@@ -684,6 +684,19 @@ class XXX_Image_GD
 					}
 				}
 				break;
+			/*
+			
+			TODO
+			
+			dots
+			
+			diagonal grids
+			
+			plusses
+			
+			grid
+			
+			*/
 			// pixels spacing
 			case 'dotGrid':
 				for ($x = 0; $x < $width; ++$x)
