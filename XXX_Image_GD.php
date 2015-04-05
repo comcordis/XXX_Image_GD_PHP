@@ -35,7 +35,7 @@ class XXX_Image_GD
 	
 	public static function generateCaptcha ($captcha = '')
 	{
-		$fontPath = XXX_Path_Local::extendPath(XXX_Path_Local::composeProjectDeploymentSourcePathPrefix('PHP_XXX_Image_GD'), array('fonts'));
+		$fontPath = XXX_Path_Local::extendPath(XXX_Path_Local::composeProjectDeploymentSourcePathPrefix('XXX_Image_GD_PHP'), array('fonts'));
 		
 		$fonts = array('arial.ttf', 'verdana.ttf', 'times.ttf');
 		
@@ -104,7 +104,7 @@ class XXX_Image_GD
 		}
 		
 		// Output
-		XXX_HTTPServer_Client_Output::sendHeader('Content-type: image/png');
+		XXX_HTTPServer_Client_Output::addHeader('Content-type', 'image/png');
 		imagepng($image);
 		
 		imagedestroy($image);
@@ -1248,19 +1248,19 @@ class XXX_Image_GD
 	
 	public function showJpg ($quality = 80)
 	{
-		XXX_HTTPServer_Client_Output::sendHeader('Content-type: image/jpeg');
+		XXX_HTTPServer_Client_Output::addHeader('Content-type', 'image/jpeg');
 		imagejpeg($this->resource, null, $quality);
 	}
 	
 	public function showGif ()
 	{
-		XXX_HTTPServer_Client_Output::sendHeader('Content-type: image/gif');
+		XXX_HTTPServer_Client_Output::addHeader('Content-type', 'image/gif');
 		imagegif($this->resource);
 	}
 	
 	public function showPng ()
 	{
-		XXX_HTTPServer_Client_Output::sendHeader('Content-type: image/png');
+		XXX_HTTPServer_Client_Output::addHeader('Content-type', 'image/png');
 		imagepng($this->resource);
 	}
 	
